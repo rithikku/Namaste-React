@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 /**
  * <div id: "parent">
  *      <div id: "child1">
@@ -29,4 +31,4 @@ console.log(parent); // object
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent); // render method is converting into object putting 
+root.render(parent); // render method is converting into object putting
