@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Namaste React
 
 # Parcel
@@ -20,6 +19,3 @@
 - HTTPs
 - Tree Shaking - remove unused Code
 - Different dev and production bundles
-=======
-#Namaste React
->>>>>>> 35d851628f501475e2cadfe5c28762bddff24e0b
