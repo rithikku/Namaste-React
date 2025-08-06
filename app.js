@@ -43,12 +43,12 @@ const Header = () => {
 }
 
 // Restaurant Card Component 
-const RestaurantCard = () => {
+const RestaurantCard = ({resName, cuisine}) => {
     return (
         <div className="res-card">
             <img className="res-card-img" src="https://images.pexels.com/photos/708488/pexels-photo-708488.jpeg?_gl=1*bjey0s*_ga*NTM5ODI2MTU3LjE3NTE2MTc3ODM.*_ga_8JE65Q40S6*czE3NTQ0NTg2MTMkbzMkZzEkdDE3NTQ0NTg2MjMkajUwJGwwJGgw"></img>
-            <h3>Meghna Foods</h3>
-            <h4>Biryani, North Indian, Asian</h4>
+            <h3>{resName}</h3>
+            <h4>{cuisine}</h4>
             <h4>4.4 Stars</h4>
             <h4>38 Minutes</h4>
         </div>
@@ -66,26 +66,12 @@ const Body = () => {
                 <button>Search</button>
             </div>
             <div className="res-container">
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
-                <RestaurantCard/>
+                <RestaurantCard resName = "Meghna Foods" cuisine = "Biryani, North Indian, Asian"/>
+                <RestaurantCard resName = "KFC" cuisine = "Non Veg, Burger, Fast Foods"/>
             </div>
         </div>
-    )
-}
+    );
+};
 
 const AppLayout = () => {
     return (
@@ -93,8 +79,8 @@ const AppLayout = () => {
             <Header/>
             <Body/>
         </div>
-    )
-}
+    );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
