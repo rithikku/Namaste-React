@@ -4,6 +4,8 @@
   "description": "This is namaste react by Rithik",
   "default": "app.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build" : "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -25,5 +27,8 @@
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
-  }
+  },
+  "browsersList" : [
+    "Last 2 Chrome version"
+  ]
 }
