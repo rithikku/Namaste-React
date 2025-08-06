@@ -20,10 +20,4 @@
 - Tree Shaking - remove unused Code
 - Different dev and production bundles
 
-# React.createElement => ReactElement- JS Object => HTMLElement(render)
 
-const heading = React.createElement(
-    "h1", 
-    {id: "heading"}, 
-    "Welcome to React!"
-);

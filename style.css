@@ -1,7 +1,80 @@
-#heading {
-    background-color: aquamarine;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.outside {
-    background-color: rgb(231, 231, 223);
+.header {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    height: 160px;
+    margin: 2px;
+}
+
+.nav-items > ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    margin: 60px 7px;
+}
+
+.nav-items > ul > li {
+    font-size: 23px;
+}
+
+.logo {
+    height: 160px;
+    width: 160px;
+}
+
+.cart-logo {
+    height: 50px;
+    width: 50px;
+    margin-top: -10px;
+}
+
+.login-button {
+    margin-top: 2px;
+    height: 30px;
+    width: 60px;
+    border-radius: 2px;
+}
+
+/* Body  */
+
+.body {
+    margin: 2px;
+    border: 1px solid black;
+    height: 520px;
+}
+
+/* Restaurant-container */
+.res-container {
+    padding: 3px;
+    margin: 1px;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* Restaurant Card  */
+.res-card {
+    cursor: pointer;
+    margin: 2px;
+    border: 1px solid black;
+    border-radius: 2px;
+    height: 235px;
+    width: 180px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+}
+
+.res-card-img {
+    margin: 2px;
+    height: 120px;
+    width: 170px;
 }
