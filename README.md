@@ -52,3 +52,8 @@ import Component from "path";
 - Named Export/Import
 export const Component;
 import {component} from "path";
+
+# React Hooks
+- Normal JS utility function
+- useState() - SuperPowerful State Variables in react
+- useEffect()
