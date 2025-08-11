@@ -20,28 +20,6 @@
 - Tree Shaking - remove unused Code
 - Different dev and production bundles
 
-# Food Odering APP
-/**
- * Header
- *  - Logo
- *  - Nav Items
- * Body
- *  - Search
- *  - Restaruant Container
- *      - Restaurant Card
- *          - Cards 
- *          - Images
- *          - Res Name
- *          - Star Rating
- *          - Cuisine
- *          - Price
- *          - Delivery Time
- * Footer
- *  - Copyright
- *  - Links
- * - Contact
- */
-
 # Two types of Export/Import
 
 - Default Export/Import
