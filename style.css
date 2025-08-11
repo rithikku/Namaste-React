@@ -34,9 +34,10 @@
 }
 
 .login-button {
+    cursor: pointer;
     margin-top: 2px;
     height: 30px;
-    width: 60px;
+    width: 70px;
     border-radius: 2px;
 }
 
@@ -69,7 +70,7 @@
     margin: 2px;
     border: 1px solid black;
     border-radius: 2px;
-    height: 290px;
+    height: 330px;
     width: 205px;
     text-align: center;
     display: flex;
@@ -79,7 +80,59 @@
 }
 
 .res-card-img {
-    margin: 2px;
-    height: 120px;
-    width: 170px;
+    margin-top: 9px;
+    height: 140px;
+    width: 180px;
+}
+
+/* Shimmer  */
+.shimmer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card {
+  width: 283px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.shimmer-image,
+.shimmer-line {
+  background: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.shimmer-image {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.shimmer-line {
+  height: 15px;
+  margin-bottom: 8px;
+}
+
+.shimmer-line.short {
+  width: 60%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -800px 0;
+  }
+  100% {
+    background-position: 800px 0;
+  }
 }
