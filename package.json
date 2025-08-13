@@ -5,7 +5,7 @@
   "default": "app.js",
   "scripts": {
     "start": "parcel index.html",
-    "build" : "parcel build index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -26,9 +26,10 @@
   },
   "dependencies": {
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^6.11.2"
   },
-  "browsersList" : [
+  "browsersList": [
     "Last 2 Chrome version"
   ]
 }
