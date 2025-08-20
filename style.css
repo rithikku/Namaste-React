@@ -254,3 +254,32 @@
 .card-menu li {
   padding: 4px 0;
 }
+
+/* About card  */
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+  margin-top: 20px;
+}
+
+/* onine offline status  */
+.status {
+  text-align: center;
+  background-color: #ff4d4d;  /* red background for warning */
+  color: white;               /* white text */
+  padding: 15px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  margin: 20px auto;
+  width: fit-content;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  animation: blink 1.5s infinite;
+}
+
+/* Simple blinking effect */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}

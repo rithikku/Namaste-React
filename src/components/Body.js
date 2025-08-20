@@ -1,10 +1,8 @@
 import RestaurantCard from "./RestaurantCard";
-
 import { useEffect, useState } from "react";
-
 import ShimmerCard from "./ShimmerCards";
-
 import { Link } from "react-router-dom";
+import useonlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     // Local State Variable - Super Powerful Variable
@@ -27,8 +25,15 @@ const Body = () => {
         // Optional Chaning 
         setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         
-        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
+
+    // CHECK ONLINE OFFLINE STATUS
+    const onlineStatus = useonlineStatus();
+
+    if(onlineStatus === false) return (
+        <h1 className="status">Looks like you're offline!! Please check your internet Connection</h1>
+    )
 
     return listOfRestaurants.length === 0? <ShimmerCard/> : ( // Ternary operator
         <div className="body">
