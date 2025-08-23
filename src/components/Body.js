@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { isOpenLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import ShimmerCard from "./ShimmerCards";
 import { Link } from "react-router-dom";
@@ -8,9 +8,11 @@ const Body = () => {
     // Local State Variable - Super Powerful Variable
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
 
-    const[filteredRestaurant, setFilteredRestaurant] = useState([]);
+    const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
     const [searchText, setSearchText] = useState("");
+
+    const RestaurantCardOpen = isOpenLabel(RestaurantCard);
 
     useEffect(() => {
         fetchData();
@@ -24,29 +26,29 @@ const Body = () => {
 
         // Optional Chaning 
         setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        
+
         setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
     // CHECK ONLINE OFFLINE STATUS
     const onlineStatus = useonlineStatus();
 
-    if(onlineStatus === false) return (
+    if (onlineStatus === false) return (
         <h1 className="status">Looks like you're offline!! Please check your internet Connection</h1>
-    )
+    );
 
-    return listOfRestaurants.length === 0? <ShimmerCard/> : ( // Ternary operator
+    return listOfRestaurants.length === 0 ? <ShimmerCard /> : ( // Ternary operator
         <div className="body">
             <div className="filter">
 
                 <div className="search">
                     <input type="text" className="search-box" value={searchText} onChange={(e) => {
                         setSearchText(e.target.value);
-                    }}/>
+                    }} />
                     <button className="search-button" onClick={() => {
-                        
+
                         const filteredRestaurant = listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLocaleLowerCase())
-                    );
+                        );
                         setFilteredRestaurant(filteredRestaurant);
 
                     }}>Search</button>
@@ -62,10 +64,18 @@ const Body = () => {
             </div>
             <div className="res-container">
 
-                {filteredRestaurant.map(restaurant => 
-                  <Link className="removeLine" key = {restaurant.info.id} to={"/restaurants/" + restaurant.info.id}><RestaurantCard resData = {restaurant}/></Link>
-                )}
-
+                {filteredRestaurant.map(restaurant => (
+                    <Link
+                        className="removeLine" key={restaurant.info.id}
+                        to={"/restaurants/" + restaurant.info.id}
+                    >
+                        {restaurant.info.isOpen ? (
+                            <RestaurantCardOpen resData={restaurant} />
+                        ) : (
+                            <RestaurantCard resData={restaurant} />
+                        )}
+                    </Link>
+                ))}
             </div>
         </div>
     );
