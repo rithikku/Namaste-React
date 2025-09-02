@@ -1,5 +1,4 @@
 const ItemList = ({ items }) => {
-    console.log(items);
   return (
     <div className="item-list">
       {items.map((item) => (

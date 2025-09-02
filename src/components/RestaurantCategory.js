@@ -1,9 +1,8 @@
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({ data }) => {
-
+const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
     const handleClick = () => {
-        console.log("clicked");
+        setShowIndex();
     }
 
   return (
@@ -13,7 +12,7 @@ const RestaurantCategory = ({ data }) => {
         <span className="accordion-icon">⬇️</span>
       </div>
 
-        <ItemList className="accordion-content" items={data.itemCards}/>
+        {showItems && <ItemList className="accordion-content" items={data.itemCards}/>}
       
     </div>
   );
