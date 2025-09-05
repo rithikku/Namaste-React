@@ -1,8 +1,9 @@
-import { LOGO_URL, CART_URL } from "../utils/constants";
+import { LOGO_URL} from "../utils/constants";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useonlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
@@ -13,6 +14,9 @@ const Header = () => {
 
     const {loggedInUser} = useContext(UserContext); 
 
+    // Subscribing to the store using a Selector
+    const cartItems = useSelector((store) => store.cart.items);
+    console.log(cartItems);
 
     return (
         <div className="header">
@@ -26,7 +30,7 @@ const Header = () => {
                     <li> <Link to="/about">About Us</Link> </li>
                     <li> <Link to="/contact">Contact Us</Link> </li>
                     <li> <Link to="/grocery">Grocery</Link> </li>
-                    <li><img className="cart-logo" src= {CART_URL}/></li>
+                    <li> <Link to="/cart">Cart - ({cartItems.length} Items)</Link> </li>
                     <li><button className="login-button" onClick={() => {
                        btnNameReact === "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
                     }}>{btnNameReact}</button></li>

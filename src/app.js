@@ -18,6 +18,8 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";  
 import AppStore from "./utils/AppStore";
 
+import Cart from "./components/Cart";
+
 const AppLayout = () => {
     
     const [userName, setUserName] = useState();
@@ -64,6 +66,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/grocery",
                 element: <Suspense fallback={<h1>Loading....</h1>}><Grocery /></Suspense>
+            },
+            {
+                path: "/cart",
+                element: <Suspense fallback={<h1>Loading....</h1>}><Cart /></Suspense>
             },
             {
                 path: "/restaurants/:resId",
